@@ -1,7 +1,8 @@
 // dkoi     DKOI-8 (Russian EBCDIC) GOST 19768-87, obscure
 //конвертёр текста из ДКОИ-8 в ASCII
 // автор Александрович Алексей Борисович
-//author Aleksandrovich Aleksey Borisovich
+//Author: Aleksandrovich Aleksey Borisovich
+//Created: 02.12.2016
 
 #include <cstdlib>
 #include <vector>
