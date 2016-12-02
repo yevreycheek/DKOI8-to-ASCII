@@ -9,26 +9,26 @@
 #include <iostream>
 #include <string>
 
-std::vector<std::string> ParserString(std::string str, char lex) { // парсер строки 
+std::vector<std::string> ParserHex(std::string str, char lex) {
 	std::string temp;
 	std::vector<std::string> parse;
 	for (int i = 0; i < str.size(); i++) {
-		if (str[i] == lex) { parse.push_back(temp); temp = ""; }
-		else { temp.push_back(str[i]); }
+		if (temp.size() == 0) {}
+		if (str[i] == lex) {}
+		if(str[i]=='0'|| str[i] == '1' || str[i] == '2' || str[i] == '3' || str[i] == '4' || str[i] == '5' || str[i] == '6' || str[i] == '7' || str[i] == '8' || str[i] == '9' || str[i] == 'A' || str[i] == 'B' || str[i] == 'C' || str[i] == 'D' || str[i] == 'E' || str[i] == 'F'  ) { temp.push_back(str[i]); }
+		if (temp.size() == 2) { parse.push_back(temp); temp = ""; }
 	}
 	return parse;
 }
-
 int main() {
-	system("chcp 1251 > nul ");  // for MS Windows
-	std::vector<std::string> parse; // массив для анализатора 
-	std::string str ="16 7F 30 30 30 31 7F 4B 4F 52 52 60 60 30 31 DF DB FA BC B9 DA ED FE BD EA ED BD DE BF 2C 32 36 CB B8 CE DD 32 30 30 31 BF DB BC B9 ED 30 3A 31 31 3A 38 33 31 30 30 3B "; // вводимая строка (пробел вконце строки обязательно !)
-	std::string lex;
+	system("chcp 1251 > nul ");
+	std::vector<std::string> parse;
+	std::string hex ="16 7F 30 30 30 31 7F 4B 4F 52 52 60 60 30 31 DF DB FA BC B9 DA ED FE BD EA ED BD DE BF 2C 32 36 CB B8 CE DD 32 30 30 31 BF DB BC B9 ED 30 3A 31 31 3A 38 33 31 30 30 3B";
 	std::string out;
-	char symbol = 32; // разделитель для парсера
+	char symbol = 32;
 
-	parse=ParserString(str, symbol);
-
+	parse= ParserHex(hex, symbol);
+	
 	for (int i = 0; i < parse.size(); i++) {
 				if (parse[i] == "C1") { out.push_back('А'); }
 		else if (parse[i] == "BA") { out.push_back('Б'); }
