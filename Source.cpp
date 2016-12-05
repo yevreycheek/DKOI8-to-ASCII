@@ -23,9 +23,12 @@ std::vector<std::string> ParserHex(std::string str, char lex) { // парсер 
 int main() {
 	system("chcp 1251 > nul "); // for MS Windows
 	std::vector<std::string> parse; // массив для анализатора 
-	std::string hex ="16 7F 30 30 30 31 7F 4B 4F 52 52 60 60 30 31 DF DB FA BC B9 DA ED FE BD EA ED BD DE BF 2C 32 36 CB B8 CE DD 32 30 30 31 BF DB BC B9 ED 30 3A 31 31 3A 38 33 31 30 30 3B"; // вводимая строка
+	std::string hex =""; // вводимая строка
 	std::string out; // строка с результатом
 	char symbol = 32; // разделитель для парсера
+
+	std::cout << "  Пожалуйста введите строку:";
+	getline(std::cin, hex, '\n'); // считывает строку и присваевает ее переменной hex
 
 	parse= ParserHex(hex, symbol);
 	
@@ -120,7 +123,7 @@ int main() {
 
 		else { std::cout << "не найдено = " << parse[i] << std::endl; }
 	}
-	std::cout << "ГОТОВО = [" << out <<"]"<< std::endl;
+	std::cout << "РЕЗУЛЬТАТ = [" << out <<"]"<< std::endl;
 	system("pause");  // for MS Windows
 	return 0;
 }
