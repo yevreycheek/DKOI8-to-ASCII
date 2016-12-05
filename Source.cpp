@@ -3,6 +3,7 @@
 // автор Александрович Алексей Борисович
 //Author: Aleksandrovich Aleksey Borisovich
 //Created: 02.12.2016
+//License: GPL v2
 
 #include <cstdlib> // for MS Windows
 #include <vector>
